@@ -2,7 +2,8 @@
 		controllerName="smax.empReg.view.Page2" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Page 2">
 		<content>
-	        <Button text="Go to Page 3" press="gotoPage3"/>
+		    <ObjectHeader title="{ProductID}" 
+		    			number = "{Name}"/>
 		</content>
 	</Page>
 </core:View>

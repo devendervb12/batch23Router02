@@ -1,0 +1,61 @@
+{   
+
+	"sap.app" : {
+		"id" : "smax.empReg",
+		"type" : "application",
+		"dataSources" : {
+			"ZGW_BATCH23_PRODUCT01_SRV" : {
+				"uri" : "proxy/http/122.180.87.238:8000/sap/opu/odata/SAP/ZGW_BATCH23_PRODUCT01_SRV/",
+				"type" : "OData"
+			}
+		}
+	},
+	"sap.ui5" : {
+		"rootView" : "smax.empReg.view.App",
+		"models" : {
+			"" : {
+				"dataSource" : "ZGW_BATCH23_PRODUCT01_SRV"
+			}
+		}, 
+		"dependencies": { 
+            "minUI5Version": "1.44.0" , 
+            "libs": {
+                "sap.m": {
+                    "minVersion": "1.44.0" 
+                }
+
+                }
+            },
+		
+		"routing" : {
+			"config" : {
+				  "viewType" : "XML",
+	        	  "controlId" : "idApp",
+	        	  "controlAggregation" : "pages",
+	        	  "routerClass" : "sap.m.routing.Router"
+				
+			},
+			"routes" : [ 
+			          {
+			        	  "pattern" : "",
+			        	  "name" : "pageRoute",
+			        	  "viewName" : "smax.empReg.view.Page1"
+			        	
+			          },
+			          {
+			        	  "pattern" : "page2/{prodid}",
+			        	  "name" : "page2Route",
+			        	  "viewName" : "smax.empReg.view.Page2"
+			        	  
+			          },
+			          {
+			        	  "pattern" : "page3",
+			        	  "name" : "page3Route",
+			        	  "viewName" : "smax.empReg.view.Page3"
+			        	  	  
+			        	  
+			          }
+			          ]
+		}
+   }	
+}

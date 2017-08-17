@@ -2,7 +2,15 @@
 		controllerName="smax.empReg.view.Page1" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Page 1">
 		<content>
-	        <Button text="to Page 2" press="gotoPage2"/>
+	        <List items="{/ProductSet}">
+	           <items>
+	              <StandardListItem title="{ProductID}"
+	              description="{Name}"
+	              type="Active"
+	              press="onItemPress"
+	              />
+	           </items>
+	        </List>
 		</content>
 	</Page>
 </core:View>
